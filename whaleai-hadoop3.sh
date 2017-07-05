@@ -23,14 +23,14 @@ HADOOP_VERSION=3.0.0
 # HTTP_STATIC_USER=hdfs
 # YARN_PROXY_PORT=8081
 echo "测试"
-
+JAVA_HOME=/opt/jdk1.8.0_131
 
 
 install()
 {
-JAVA_HOME=/opt/jdk1.8.0_131
-#解压
-sudo　tar -zxf hadoop-$HADOOP_VERSION.tar.gz &&sudo mv hadoop-HADOOP_VERSION /opt
+python - <<END
+print ("hello")
+END
 
 create_config()
 {
@@ -152,7 +152,12 @@ echo "${Author} ${HadoopProfile}" > hadoop-3.0.0.sh
 echo "hadoop3完成"
 
 }
+echo "玩"
 
+file()
+{
+	echo "file 玩"
+}
 
 help()
 {
@@ -164,7 +169,7 @@ This script installs Hadoop 3 with basic data, log, and pid directories.
 USAGE:  install-hadoop3.sh [options]
 
 OPTIONS:
-   -i, --install 					Hadoop3伪分布式安装
+   -i, --install      		Hadoop3伪分布式安装
 
    -r, --remove           Hadoop3卸载
 
